@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body {
+    max-width: 100% !important;
+}
+
+.header {
+    position: relative;
+    height: 100vh;
+    background: #080008;
+    padding: 0 8%;
+    max-width: 100%;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ .logo {
+    width: 300px;
+} 
+
+.header .nav-links {
+    padding: 28px 0;
+}
+
+.header .nav-links li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.header .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 0;
+    position: relative;
+    font-size: 18px;
+}
+
+.header .nav-links li a::after {
+    content: "";
+    background: #ff3d00;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s
+}
+
+.header .nav-links li a:hover::after {
+    width: 100%;
+}
+
+.action-info {
+    display: flex;
+    gap: 10px;
+}
+
+.action-info .sign-up {
+    background: #ff3d00;
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.header .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    max-width: 900px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.header .content h1 {
+    font-size: 65px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    ;
+}
+
+.header .content h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.header .content .form-input-search {
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+}
+
+.header .content .form-input-search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.header .content .form-input-search .submit-search {
+    background: #ff9300 !important;
+    border: none;
+    padding: 10px 40px !important;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.header .content form .submit-search i {
+    font-size: 30px;
+}

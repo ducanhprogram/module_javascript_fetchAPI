@@ -1,0 +1,105 @@
+{
+  "users": [
+    {
+      "email": "leducanhled@gmail.com",
+      "password": "$2a$10$qozNWc7osbdel1Ceit1ZZOHc8kwnSGWAVqc9xwhnHZxvoU0QYiAtm",
+      "id": 1
+    },
+    {
+      "email": "huan@gmail.com",
+      "password": "$2a$10$DBNdsm2zvD1WtZ.RWWADzegcGY19E.jBPsltRZcF5./GBIn1yBsSu",
+      "id": 2
+    },
+    {
+      "email": "Hoang@gmail.com",
+      "password": "$2a$10$L0HKoHxeTbnN/cvMOPI7muyXqQD0L9y97DctO2chulIRxHfxVce8e",
+      "id": 3
+    },
+    {
+      "email": "Mai@gmail.com",
+      "password": "$2a$10$dvdqrLNW.KhSGSyK8ZBIUexkdVF7m5dB/ucikV87l5zn9/BXR9yA.",
+      "id": 4
+    },
+    {
+      "email": "nguyenvana@gmail.com",
+      "password": "$2a$10$C6DblXkuFtAbvoxqcSh2C.oZ6d5mgU95ylHBQkLuMEv4aA1cr9YvG",
+      "id": 5
+    },
+    {
+      "email": "levanc@gmail.com",
+      "password": "$2a$10$ZanVwZiGvRdqb4pwqA1FhuFziwxKN/6ePvn5qd7ylFM26tWFWUMOq",
+      "id": 6
+    },
+    {
+      "email": "user4@gmail.com",
+      "password": "$2a$10$6g0wH6zaS2blFadzyw.rB.rmUPxmLcc38uV0yEi/5PwuZe/Rt/iTm",
+      "id": 7
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "SMARTPHONES",
+      "image": "https://tanvienthanh.com/wp-content/uploads/2024/09/15-PM-XAH.jpg"
+    },
+    {
+      "id": 2,
+      "name": "MOTORCYCLE",
+      "image": "https://www.budgetdirect.com.au/content/dam/budgetdirect/website-assets/2017/motorcycle/content/guides/motorcyle-pros-cons-new-3.jpg"
+    },
+    {
+      "id": 3,
+      "name": "LAPTOPS",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTNKTrxorCuu6E9SQiM5TOidHcVdfPFO3sZw&s"
+    },
+    {
+      "id": 4,
+      "name": "SPORTS WEAR",
+      "image": "https://bizweb.dktcdn.net/100/485/982/products/4-1701944017717.jpg?v=1701945357430"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 16 Pro",
+      "categoryId": 1,
+      "image": "https://cdn.tgdd.vn/Products/Images/42/329143/iphone-16-pro-titan-tu-nhien.png",
+      "price": "20.000.000đ"
+    },
+    {
+      "id": 2,
+      "name": "Kawasaki Ninja H2",
+      "categoryId": 2,
+      "image": "https://content2.kawasaki.com/ContentStorage/KMV/Products/4941/4370d06e-158d-4dec-bfad-8015baed54a2.png?h=220",
+      "price": "800.000.000đ"
+    },
+    {
+      "id": 3,
+      "name": "Athleisure Sports Shoes for Men",
+      "categoryId": 4,
+      "image": "https://product.hstatic.net/200000563747/product/upload_9467f934391142049994e660722b5fe1.jpg",
+      "price": "4.000.000đ"
+    },
+    {
+      "id": 4,
+      "name": "Soccer jersey mockup for football club. uniform front and back view",
+      "categoryId": 4,
+      "image": "https://chogym.vn/wp-content/uploads/2019/06/ao-body-tap-gym-ao-thun-the-thao-2.jpg",
+      "price": "4.000.000đ"
+    },
+    {
+      "id": 5,
+      "name": "Gaming laptops, the best.",
+      "categoryId": 3,
+      "image": "https://i.redd.it/msl53vqmf4xb1.jpg",
+      "price": "24.000.000đ"
+    },
+    {
+      "id": 6,
+      "name": " Fond du Lac Credit Union.",
+      "categoryId": 2,
+      "image": "https://www.fdlcu.com/wp-content/uploads/2024/10/buying-a-motorcycle.jpg",
+      "price": "1.000.000.000đ"
+    }
+  ]
+}
