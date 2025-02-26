@@ -11,29 +11,9 @@
       "id": 2
     },
     {
-      "email": "Hoang@gmail.com",
-      "password": "$2a$10$L0HKoHxeTbnN/cvMOPI7muyXqQD0L9y97DctO2chulIRxHfxVce8e",
+      "email": "user5@gmail.com",
+      "password": "$2a$10$xR6JJ4OcIT/6tHHJvjDyX.Z4KxmceTdqTS5lwCsY5E1RsfOksM0IK",
       "id": 3
-    },
-    {
-      "email": "Mai@gmail.com",
-      "password": "$2a$10$dvdqrLNW.KhSGSyK8ZBIUexkdVF7m5dB/ucikV87l5zn9/BXR9yA.",
-      "id": 4
-    },
-    {
-      "email": "nguyenvana@gmail.com",
-      "password": "$2a$10$C6DblXkuFtAbvoxqcSh2C.oZ6d5mgU95ylHBQkLuMEv4aA1cr9YvG",
-      "id": 5
-    },
-    {
-      "email": "levanc@gmail.com",
-      "password": "$2a$10$ZanVwZiGvRdqb4pwqA1FhuFziwxKN/6ePvn5qd7ylFM26tWFWUMOq",
-      "id": 6
-    },
-    {
-      "email": "user4@gmail.com",
-      "password": "$2a$10$6g0wH6zaS2blFadzyw.rB.rmUPxmLcc38uV0yEi/5PwuZe/Rt/iTm",
-      "id": 7
     }
   ],
   "categories": [

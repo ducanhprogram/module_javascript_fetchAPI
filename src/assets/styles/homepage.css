@@ -13,6 +13,7 @@ body {
     max-width: 100% !important;
 }
 
+
 .header {
     position: relative;
     height: 100vh;
@@ -75,6 +76,7 @@ body {
     border-radius: 6px;
     cursor: pointer;
 }
+
 
 .header .content {
     position: absolute;

@@ -76,6 +76,17 @@ const afterRegister = () => {
     const passwordError = document.querySelector(".password-error");
     const alertP = registerForm.querySelector(".alert");
 
+    setTimeout(() => {
+        const headerHome = document.querySelector(".header");
+        const contentElement = document.querySelector(".content");
+        if (contentElement) {
+            contentElement.remove();
+        }
+        headerHome.classList.add("login-page");
+        headerHome.style.height = "100%";
+        headerHome.style.backgroundColor = "transparent";
+    }, 0);
+
     registerForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const fornData = new FormData(e.target);

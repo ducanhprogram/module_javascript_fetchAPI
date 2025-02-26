@@ -1,4 +1,4 @@
-import { router } from "../main";
+import { router } from "../main.js";
 import afterLogin from "./afterLogin";
 
 const serverApi = `http://localhost:3000`;
@@ -30,6 +30,15 @@ const afterHomePage = () => {
         const signInBtn = document.querySelector(".sign-in");
         const signUpBtn = document.querySelector(".sign-up");
         const logoutBtn = document.querySelector(".log-out");
+        const linkHome = document.querySelector(".link-home");
+        const submitSearch = document.querySelector(".submit-search");
+
+        if (linkHome) {
+            linkHome.addEventListener("click", (e) => {
+                e.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ a
+                router.navigate("/"); // Quay về trang chủ
+            });
+        }
 
         if (isLoggedIn) {
             if (signInBtn) signInBtn.style.display = "none";
@@ -61,6 +70,18 @@ const afterHomePage = () => {
 
             signUpBtn.addEventListener("click", () => {
                 router.navigate("/register");
+            });
+        }
+
+        if (submitSearch) {
+            submitSearch.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (!isLoggedIn) {
+                    alert("Bạn cần đăng nhập để tìm kiếm sản phẩm!");
+                    router.navigate("/login");
+                } else {
+                    router.navigate("/category");
+                }
             });
         }
 

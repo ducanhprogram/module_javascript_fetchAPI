@@ -1,4 +1,5 @@
 import { router } from "../main";
+import HomePage from "../pages/HomePage";
 
 const serverApi = `http://localhost:3000`;
 
@@ -45,6 +46,25 @@ const getLogin = async (data) => {
 };
 
 const afterLogin = () => {
+    setTimeout(() => {
+        const headerHome = document.querySelector(".header");
+        const contentElement = document.querySelector(".content");
+        if (contentElement) {
+            contentElement.remove();
+        }
+        headerHome.classList.add("login-page");
+        headerHome.style.height = "100%";
+        headerHome.style.backgroundColor = "transparent";
+    }, 0);
+
+    //Xử lý người dùng ấn vào thẻ a sang trang đăng ký
+    const registerLink = document.querySelector(".register-link");
+    if (registerLink) {
+        registerLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            router.navigate("/register");
+        });
+    }
     const loginForm = document.querySelector("#login-form");
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();

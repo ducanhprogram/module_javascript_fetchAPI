@@ -1,7 +1,8 @@
 import "../assets/styles/register.css";
+import HomePage from "./HomePage";
 
 function RegisterPage() {
-    return /*html*/ `<div class="panda">
+    return /*html*/ `${HomePage()} <div class="panda">
   <div class="ear"></div>
   <div class="face">
     <div class="eye-shade"></div>
@@ -42,6 +43,7 @@ function RegisterPage() {
    <p class="password-error" style="color: red"></p>
     <button class="btn">Register</button>
   </div>
+  <div class="form-search"></div>
 </form>`;
 }
 

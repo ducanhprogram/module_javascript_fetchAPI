@@ -10,7 +10,7 @@ function HomePage() {
     }, 0);
     return /*html*/ ` <div class="header">
             <nav>
-             <img src="${logo}" alt="Logo" class="logo" />
+                <a class="link-home"> <img src="${logo}" alt="Logo" class="logo" /></a>
                 <ul class="nav-links">
                     <li><a href="">Home</a></li>
                     <li><a href="">Product</a></li>
