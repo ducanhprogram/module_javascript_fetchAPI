@@ -14,6 +14,11 @@
       "email": "user5@gmail.com",
       "password": "$2a$10$xR6JJ4OcIT/6tHHJvjDyX.Z4KxmceTdqTS5lwCsY5E1RsfOksM0IK",
       "id": 3
+    },
+    {
+      "email": "user4@gmail.com",
+      "password": "$2a$10$Bl1Ch0DLTLctU3jfly0eJ.MELDxTzi3jUto.GxgE1e9dzYTUs6ahO",
+      "id": 4
     }
   ],
   "categories": [

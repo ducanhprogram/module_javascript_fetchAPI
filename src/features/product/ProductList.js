@@ -6,16 +6,10 @@ async function ProductList() {
     const categories = await getCategories();
     //fetch products form the server
     return /*html*/ `
-       <section class="slider">
-        <div class="slider-content">
-            <h1>Chào mừng đến với cửa hàng của chúng tôi!</h1>
-            <p>Khám phá các sản phẩm chất lượng với giá ưu đãi</p>
-            <button class="slider-buy">Mua ngay</button>
-        </div>
-    </section>
-    <div class="container">
-    <aside class="sidebar">
-    <h2>Danh mục sản phẩm</h2>
+    ${HomePage()}
+    <div class="container-category">
+        <aside class="sidebar">
+            <h2>Danh mục sản phẩm</h2>
             <ul id="category-list" class="category-list">
             ${categories
                 .map((category) => {
@@ -27,6 +21,17 @@ async function ProductList() {
                 .join("")}
             </ul>
         </aside>
+        <!--end aside-->
+
+        <main class="main">
+             <section class="slider">
+             <div class="slider-content">
+                <h1>Chào mừng đến với cửa hàng của chúng tôi!</h1>
+                <p>Khám phá các sản phẩm chất lượng với giá ưu đãi</p>
+                 <button class="slider-buy">Mua ngay</button>
+            </div>
+             </section>
+   
 
         <section class="products">
                 <h3 id="category-title"></h3>
@@ -48,8 +53,10 @@ async function ProductList() {
                     </div>
                     </div>
                     -->
-                </div>
-        </section>
+                 </div>
+             </section>
+
+         </main>
     </div>
    `;
 }

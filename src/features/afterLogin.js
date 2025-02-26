@@ -4,23 +4,28 @@ import HomePage from "../pages/HomePage";
 const serverApi = `http://localhost:3000`;
 
 // Hàm kiểm tra token có hợp lệ không
-const isValidToken = async (token) => {
-    try {
-        const response = await fetch(`${serverApi}/auth/login`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ token }),
-        });
+// const isValidToken = async (data) => {
+//     try {
+//         const response = await fetch(`${serverApi}/auth/login`, {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//             },
+//             body: JSON.stringify(data),
+//         });
 
-        const data = await response.json();
-        return data.valid; // Trả về true nếu token hợp lệ
-    } catch (error) {
-        console.log("Lỗi xác thực token:", error);
-        return false;
-    }
-};
+//         if (!response.ok) {
+//             throw new Error("Unauthenticated");
+//         }
+
+//         const users = await response.json();
+
+//         return users; // Trả về true nếu token hợp lệ
+//     } catch (error) {
+//         console.log("Lỗi xác thực token:", error);
+//         return false;
+//     }
+// };
 
 const getLogin = async (data) => {
     try {
@@ -71,7 +76,8 @@ const afterLogin = () => {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
 
-        getLogin(data);
+        const response = getLogin(data);
+
         loginForm.reset();
     });
 };
