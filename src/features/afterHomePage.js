@@ -36,6 +36,12 @@ const afterHomePage = async () => {
     //Kiểm tra đăng nhập
     const isLoggedIn = !!token;
 
+    if (!isLoggedIn && window.location.pathname === "/category") {
+        alert("Bạn cần đăng nhập để truy cập danh mục sản phẩm!");
+        router.navigate("/login");
+        return;
+    }
+
     const signInBtn = document.querySelector(".sign-in");
     const signUpBtn = document.querySelector(".sign-up");
     const logoutBtn = document.querySelector(".log-out");
@@ -62,10 +68,11 @@ const afterHomePage = async () => {
     const productLink = document.querySelector(".nav-links li:nth-child(2) a");
     if (productLink) {
         productLink.addEventListener("click", async (e) => {
-            if (!isLoggedIn) {
-                e.preventDefault();
+            if (!token) {
                 alert("Bạn cần đăng nhập để xem sản phẩm!");
                 router.navigate("/login");
+            } else {
+                router.navigate("/category");
             }
         });
     }
@@ -95,6 +102,7 @@ const afterHomePage = async () => {
     if (logoutBtn) {
         logoutBtn.addEventListener("click", () => {
             localStorage.removeItem("token");
+            localStorage.removeItem("userId");
             alert("Bạn đã đăng xuất!");
             router.navigate("/"); // Quay về trang chủ
             afterHomePage(); // Cập nhật lại giao diện

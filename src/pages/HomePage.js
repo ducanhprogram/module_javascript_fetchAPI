@@ -9,7 +9,7 @@ function HomePage() {
         afterHomePage();
     }, 0);
     return /*html*/ ` <div class="header">
-            <nav>
+            <nav class="header-nav">
                 <a class="link-home"> <img src="${logo}" alt="Logo" class="logo" /></a>
                 <ul class="nav-links">
                     <li><a href="">Home</a></li>

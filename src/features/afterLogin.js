@@ -37,7 +37,7 @@ const getLogin = async (data) => {
             body: JSON.stringify(data),
         });
         if (!response.ok) {
-            alert("Đăng nhập thất bại!");
+            alert("Đăng nhập thất bại! Kiểm tra lại email và mật khẩu.");
             throw new Error("Đăng nhập thất bại");
         }
         const userData = await response.json();
@@ -46,7 +46,7 @@ const getLogin = async (data) => {
         alert("Login successful! Bạn có thể xem sản phẩm chúng mình rồi....");
         router.navigate("/category");
     } catch (e) {
-        console.error(e.message);
+        console.error("Lỗi đang nhập:", e.message);
     }
 };
 

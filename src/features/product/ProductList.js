@@ -4,11 +4,25 @@ import HomePage from "../../pages/HomePage";
 
 async function ProductList() {
     const categories = await getCategories();
-    //fetch products form the server
+
     return /*html*/ `
     ${HomePage()}
     <div class="container-category">
+ 
+    <input type="checkbox" id="check" hidden>
+    <label class="open-sidebar" for="check">
+       <i class="fa-solid fa-bars"></i>
+    </label>
+
         <aside class="sidebar">
+         <label for="check" class="close-sidebar">
+        <i class="fa-solid fa-xmark"></i>
+          </label>
+
+             <div class="search-box">
+             <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
+          <input type="text" class="input-search" placeholder="Type to Search...">
+         </div>
             <h2>Danh mục sản phẩm</h2>
             <ul id="category-list" class="category-list">
             ${categories
