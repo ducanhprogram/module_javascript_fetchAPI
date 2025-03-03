@@ -4,6 +4,7 @@ import { Button } from "../components/common/Button";
 import Slides from "../components/ui/Slides";
 import afterHomePage from "../features/afterHomePage";
 import ProductList from "../features/product/ProductList";
+
 function HomePage() {
     setTimeout(() => {
         afterHomePage();
@@ -34,7 +35,8 @@ function HomePage() {
                     </button>
                 </form>
             </div>
-        </div>
+            </div>
+        
         `;
 }
 

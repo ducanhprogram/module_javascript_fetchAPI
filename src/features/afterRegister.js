@@ -71,11 +71,12 @@ const getRegister = async (data) => {
 };
 
 const afterRegister = () => {
+    const body = document.querySelector("body");
     const registerForm = document.querySelector("#register-form");
     const emailError = document.querySelector(".email-error");
     const passwordError = document.querySelector(".password-error");
     const alertP = registerForm.querySelector(".alert");
-
+    body.style.background = "#cc3367;";
     setTimeout(() => {
         const headerHome = document.querySelector(".header");
         const contentElement = document.querySelector(".content");

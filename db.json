@@ -41,6 +41,16 @@
       "id": 4,
       "name": "SPORTS WEAR",
       "image": "https://bizweb.dktcdn.net/100/485/982/products/4-1701944017717.jpg?v=1701945357430"
+    },
+    {
+      "name": "FRIDGE",
+      "image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/1943/331796/tu-lanh-lg-inverter-335-lit-ltb33blg-1-638665075465917652-700x467.jpg",
+      "id": 5
+    },
+    {
+      "name": "ELECTRONICS",
+      "image": "https://hiokivn.com/cdn/images/thiet-bi-dien-dan-dung-la-gi-1.jpg",
+      "id": 6
     }
   ],
   "products": [
@@ -49,46 +59,52 @@
       "name": "iPhone 16 Pro",
       "categoryId": 1,
       "image": "https://cdn.tgdd.vn/Products/Images/42/329143/iphone-16-pro-titan-tu-nhien.png",
-      "price": "20.000.000đ"
+      "price": "20.000.000",
+      "description": "Khuyến mãi trị giá 600.000₫\n\nGiá và khuyến mãi dự kiến áp dụng đến 23:59 | 28/02\n1\nMua online thêm quà: Tặng Chuột không dây trị giá 200,000đ (Hết quà hoàn tiền 100.000₫)\n\n2\nPhiếu mua hàng mua AirPods và Apple Watch mệnh giá 300.000 VND"
     },
     {
       "id": 2,
       "name": "Kawasaki Ninja H2",
       "categoryId": 2,
       "image": "https://content2.kawasaki.com/ContentStorage/KMV/Products/4941/4370d06e-158d-4dec-bfad-8015baed54a2.png?h=220",
-      "price": "800.000.000đ"
+      "price": "800.000.000",
+      "description": " Đây là một chiếc siêu mô tô đường đua đầu tiên trên toàn cầu được trang bị động cơ siêu nạp, có khả năng đạt tốc độ tối đa lên đến 400km/h.\n \n 1\nCác dòng sportbike tiền tỷ đang ngày càng trở nên sôi động trong cộng đồng mô tô Việt Nam, đặc biệt là từ những thương hiệu nổi tiếng như Ducati, BMW, Kawasaki và Honda.\n \n  2\nPhiếu mua hàng mua AirPods và Apple Watch mệnh giá 300.000 VND"
     },
     {
       "id": 3,
       "name": "Athleisure Sports Shoes for Men",
       "categoryId": 4,
       "image": "https://product.hstatic.net/200000563747/product/upload_9467f934391142049994e660722b5fe1.jpg",
-      "price": "4.000.000đ"
+      "price": "4.000.000",
+      "description": "Khuyến mãi trị giá 600.000₫\n\nGiá và khuyến mãi dự kiến áp dụng đến 23:59 | 28/02\n1\nMua online thêm quà: Tặng Chuột không dây trị giá 200,000đ (Hết quà hoàn tiền 100.000₫)\n\n2\nPhiếu mua hàng mua AirPods và Apple Watch mệnh giá 300.000 VND"
     },
     {
       "id": 4,
       "name": "Soccer jersey mockup for football club. uniform front and back view",
       "categoryId": 4,
       "image": "https://chogym.vn/wp-content/uploads/2019/06/ao-body-tap-gym-ao-thun-the-thao-2.jpg",
-      "price": "4.000.000đ"
+      "price": "4.000.000",
+      "description": "Khuyến mãi trị giá 600.000₫\n\nGiá và khuyến mãi dự kiến áp dụng đến 23:59 | 28/02\n1\nMua online thêm quà: Tặng Chuột không dây trị giá 200,000đ (Hết quà hoàn tiền 100.000₫)\n\n2\nPhiếu mua hàng mua AirPods và Apple Watch mệnh giá 300.000 VND"
     },
     {
       "id": 5,
       "name": "Gaming laptops, the best.",
       "categoryId": 3,
       "image": "https://i.redd.it/msl53vqmf4xb1.jpg",
-      "price": "24.000.000đ"
+      "price": "24.000.000",
+      "description": "Khuyến mãi trị giá 600.000₫\n\nGiá và khuyến mãi dự kiến áp dụng đến 23:59 | 28/02\n1\nMua online thêm quà: Tặng Chuột không dây trị giá 200,000đ (Hết quà hoàn tiền 100.000₫)\n\n2\nPhiếu mua hàng mua AirPods và Apple Watch mệnh giá 300.000 VND"
     },
     {
       "id": 6,
       "name": " Fond du Lac Credit Union.",
       "categoryId": 2,
       "image": "https://www.fdlcu.com/wp-content/uploads/2024/10/buying-a-motorcycle.jpg",
-      "price": "1.000.000.000đ"
+      "price": "1.000.000.000",
+      "description": "Khuyến mãi trị giá 600.000₫\n\nGiá và khuyến mãi dự kiến áp dụng đến 23:59 | 28/02\n1\nMua online thêm quà: Tặng Chuột không dây trị giá 200,000đ (Hết quà hoàn tiền 100.000₫)\n\n2\nPhiếu mua hàng mua AirPods và Apple Watch mệnh giá 300.000 VND"
     },
     {
       "name": "Samsung S25 Ultra",
-      "price": "25000000đ",
+      "price": "25.000.000",
       "categoryId": 1,
       "image": "https://img.youtube.com/vi/eYYPEZFk3q0/maxresdefault.jpg",
       "description": "Siêu phẩm: Hình ảnh concept Galaxy S25 Ultra đẹp mê ly",
@@ -96,7 +112,7 @@
     },
     {
       "name": "Kawasaki Ninja H2",
-      "price": "500.000.000đ",
+      "price": "500.000.000",
       "categoryId": 2,
       "image": "https://content2.kawasaki.com/ContentStorage/KMA/ProductTopFeature/2291/f3deb7d1-3615-464e-b7c1-41cfa70c2a3a.jpg?w=800",
       "description": "Xe Mô Tô Kawasaki",
@@ -104,7 +120,7 @@
     },
     {
       "name": "Laptop Dell Inspiron 15 3520 i5 1235U/16GB/512GB/120Hz/OfficeHS/Win11 (N5I5052W1)",
-      "price": "20.000.000đ",
+      "price": "20.000.000",
       "categoryId": 3,
       "image": "https://cdn.tgdd.vn/Products/Images/44/325242/Slider/dell-inspiron-15-3520-i5-1235u-16gb-512gb-120hz-officehs-win11-n5i5052w1638557748484267591.jpg",
       "description": "Khuyến mãi trị giá 600.000₫\n\nGiá và khuyến mãi dự kiến áp dụng đến 23:59 | 28/02\n1\nMua online thêm quà: Tặng Chuột không dây trị giá 200,000đ (Hết quà hoàn tiền 100.000₫)\n\n2\nPhiếu mua hàng mua AirPods và Apple Watch mệnh giá 300.000 VND",
@@ -112,11 +128,36 @@
     },
     {
       "name": "Kawasaki Z1000R Edition mới chính hãng",
-      "price": "490.000.000đ",
+      "price": "490.000.000",
       "categoryId": 2,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnmfsuR2yqPxPHevHSU4sgJNvtweWwcpa1dw&s",
       "description": "Kawasaki Z1000R Edition mới 2023 là thành quả nghiên cứu thiết kế Sugomi tuyệt đẹp cho ra kiểu mô tô trông giống như một oái thú săn mồi trông rất hầm hố và dữ tợn, cho dù chạy ngoài trời sáng hay bóng tối thì Kawasaki Z1000R Edition 2023 không lẫn lộn với bất kỷ một xe mô tô thể thao dòng Naked nào khác.\n\n",
       "id": 10
+    },
+    {
+      "name": "Tủ lạnh LG Inverter 335 lít LTB33BLG",
+      "price": "11.250.000",
+      "categoryId": 5,
+      "image": "https://cdnv2.tgdd.vn/mwg-static/dmx/Products/Images/1943/331796/tu-lanh-lg-inverter-335-lit-ltb33blg-4-638665075486948134-700x467.jpg",
+      "description": "Đặc điểm nổi bật\n\nThiết kế mặt gương soi sang trọng, dung tích sử dụng 335 lít.\nDuy trì nhiệt độ ổn định, bảo quản thực phẩm tươi ngon với công nghệ LINEARCooling.\nPhân bổ hơi lạnh nhanh, đồng đều từ cánh cửa tủ nhờ DoorCooling+ và Multi Air Flow.",
+      "id": 11
+    },
+    {
+      "name": " nike AS M NK DF ACD21 TRK SUIT K nam CW6132-437",
+      "price": "1.615.000",
+      "categoryId": 4,
+      "image": "https://product.hstatic.net/200000174405/product/a834_2c6716e5ea0d43b5a75c842bdeb47e86_4c44b566fc5e4d91b35ee62d428550f3_0214473770e044ebbc10fb86666b575c_1024x1024.jpg",
+      "description": "Khuyến mại Nike Áo bóng đá nike nam Quần bóng đá nike nam Bộ quần áo nike nam ÁO NAM NIKE Nike Hàng Thu Đông THỜI TRANG NAM NIKE BST MÙA ĐÔNG NIKE & ADIDAS BST BÓNG ĐÁ QUẦN NAM NIKE",
+      "id": 12
+    },
+    {
+      "name": "Ti Vi",
+      "price": "11.250.000",
+      "categoryId": 6,
+      "image": "https://cdn.tgdd.vn/Products/Images/1942/278575/Slider/smart-nanocell-lg-4k-65-inch-65nano76sqa638204524412249218.jpg",
+      "description": "Smart TV NanoCell\nKích cỡ màn hình:\n65 inch\nĐộ phân giải:\n4K (Ultra HD)\nLoại màn hình:\nĐèn nền: LED nền (Direct LED), Tấm nền: Hãng không công bố\nHệ điều hành:\nwebOS 22\nChất liệu chân đế:\nVỏ nhựa lõi kim loại\nChất liệu viền tivi:\nNhựa\nNơi sản xuất:\nIndonesia\nNăm ra mắt:\n2022",
+      "id": 13
     }
-  ]
+  ],
+  "cart": []
 }

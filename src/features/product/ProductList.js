@@ -1,12 +1,15 @@
 import "../../assets/styles/product_list.css";
 import { getCategories } from "../../api/categoryApi";
 import HomePage from "../../pages/HomePage";
+import afterAddCategory from "../afterAddCategory";
+import Footer from "../../components/Footer/footer";
 
 async function ProductList() {
     const categories = await getCategories();
 
     return /*html*/ `
     ${HomePage()}
+    ${afterAddCategory()}
     <div class="container-category">
  
     <input type="checkbox" id="check" hidden>
@@ -48,30 +51,21 @@ async function ProductList() {
    
 
         <section class="products">
+        <select id="sort-select">
+            <option value="default">Mặc định</option>
+             <option value="asc">Giá: Thấp → Cao</option>
+             <option value="desc">Giá: Cao → Thấp</option>
+        </select>
+
                 <h3 id="category-title"></h3>
                 <div class="product-list" id="product-list">
-                <!--
-                    <div class="product-card">
-                    <div class="card">
-
-                    <div class="imgBox">
-                        <img src="https://cdn.tgdd.vn/Products/Images/42/329143/iphone-16-pro-titan-tu-nhien.png" alt="mouse corsair" class="mouse">
-                    </div>
-
-                    <div class="contentBox">
-                        <h3>iPhone 16 Pro</h3>
-                        <h2 class="price">20.000.000<small>đ</small></h2>
-                        <a href="#" class="buy">Buy Now</a>
-                    </div>
-
-                    </div>
-                    </div>
-                    -->
+                                                                                                                      
                  </div>
              </section>
 
          </main>
     </div>
+    ${Footer()}
    `;
 }
 

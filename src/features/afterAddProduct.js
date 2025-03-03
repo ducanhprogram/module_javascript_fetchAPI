@@ -53,6 +53,7 @@ const handlePriceInput = (event) => {
 
 const afterAddProduct = () => {
     const formProduct = document.getElementById("form-product");
+
     if (!formProduct) return;
     formProduct.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -67,7 +68,7 @@ const afterAddProduct = () => {
 
         const newProduct = {
             name: data.productName,
-            price: `${priceFormatted}đ`,
+            price: `${priceFormatted}`,
             categoryId: Number(data.productCategory),
             image: data.productImage,
             description: data.productDescription,

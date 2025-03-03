@@ -77,8 +77,14 @@ body {
     cursor: pointer;
 }
 
+.action-info .log-out {
+background: #2f1c36;
+    color: rgba(255, 255, 255, 0.95);
+}
+
 
 .header .content {
+    display: block;
     position: absolute;
     left: 50%;
     top: 50%;

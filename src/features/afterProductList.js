@@ -1,112 +1,28 @@
-// import { getAll } from "../../src/api/productApi";
-// import ProductList from "./product/ProductList";
-// import HomePage from "../pages/HomePage";
-
-// const afterProductList = () => {
-//     const categoryList = document.querySelector("#category-list");
-//     const productList = document.querySelector("#product-list");
-//     const categoryTitle = document.querySelector("#category-title");
-//     const searchInput = document.querySelector(".input-search");
-//     const sidebar = document.querySelector(".sidebar");
-//     const checkBox = document.getElementById("check");
-//     const iconClose = document.querySelector(".fa-xmark");
-//     const iconBars = document.querySelector(".fa-bars");
-
-//     iconBars.style.display = "none";
-//     checkBox.addEventListener("click", () => {
-//         if (checkBox.checked) {
-//             iconClose.style.display = "none";
-//             iconBars.style.display = "flex";
-//             sidebar.style.display = "none";
-//         } else {
-//             iconClose.style.display = "block";
-//             iconBars.style.display = "none";
-//             sidebar.style.display = "block";
-//         }
-//     });
-
-//     if (categoryList) {
-//         categoryList.addEventListener("click", async (e) => {
-//             console.log(e.target.classList.contains("category-item"));
-//             // if (e.target.classList.contains("category-item")) {
-//             //     document.querySelectorAll(".category-item").forEach((item) => {
-//             //         item.classList.remove("active");
-//             //     });
-
-//             const filterProductsByCategory = async (categoryElement) => {
-//                 document.querySelectorAll(".category-item").forEach((item) => {
-//                     item.classList.remove("active");
-//                 });
-
-//                 e.target.classList.add("active");
-//                 const categoryId = +e.target.dataset.id;
-//                 const products = await getAll();
-
-//                 const filteredProducts = products.filter((product) => {
-//                     return +product.categoryId === +categoryId;
-//                 });
-
-//                 if (!categoryTitle || !productList) {
-//                     return;
-//                 }
-
-//                 //Cập nhật tiêu đề danh mục
-//                 categoryTitle.textContent = e.target.textContent;
-//                 //Render sản phẩm
-//                 productList.innerHTML = filteredProducts
-//                     .map((product) => {
-//                         /*html*/ return ` <div class="product-card">
-//                     <div class="card">
-
-//                     <div class="imgBox">
-//                         <img src="${product.image}" alt="${
-//                             product.name
-//                         }" class="mouse product-image">
-//                     </div>
-
-//                     <div class="contentBox">
-//                         <h3>${product.name}</h3>
-//                         <h2 class="price">${product.price.toLocaleString()}</h2>
-//                         <a href="#" class="buy">Buy Now</a>
-//                     </div>
-
-//                     </div>
-//                     </div>`;
-//                     })
-//                     .join("");
-//             };
-//         });
-//     }
-
-//     searchInput.addEventListener("input", () => {
-//         const searchValue = searchInput.value.trim().toLowerCase();
-
-//         const matchedCategory = Array.from(
-//             document.querySelectorAll(".category-item")
-//         ).find((category) =>
-//             category.textContent.trim().toLowerCase().includes(searchValue)
-//         );
-
-//         if (matchedCategory) {
-//             filterProductsByCategory(matchedCategory);
-//         }
-//     });
-// };
-
-// export default afterProductList;
-
 import { getAll } from "../../src/api/productApi";
 
-const afterProductList = () => {
+const afterProductList = async () => {
     const categoryList = document.querySelector("#category-list");
     const productList = document.querySelector("#product-list");
     const categoryTitle = document.querySelector("#category-title");
     const searchInput = document.querySelector(".input-search");
-
+    const header = document.querySelector(".header");
+    const content = document.querySelector(".content");
     const sidebar = document.querySelector(".sidebar");
+    const navLink = document.querySelector(".nav-links");
+    const body = document.querySelector("body");
+    const app = document.querySelector("#app");
     const checkBox = document.getElementById("check");
     const iconClose = document.querySelector(".fa-xmark");
     const iconBars = document.querySelector(".fa-bars");
+    const sortSelect = document.querySelector("#sort-select");
+    const activeCategory = { id: null };
+
+    content.style.display = "none";
+    header.style.height = "65px";
+    header.style.background = "#fbfbfb";
+    app.style.background = "#fbfbfb";
+    body.style.background = "#fbfbfb";
+    navLink.style.display = "none";
 
     iconBars.style.display = "none";
     checkBox.addEventListener("click", () => {
@@ -120,7 +36,56 @@ const afterProductList = () => {
             sidebar.style.display = "block";
         }
     });
-    if (!categoryList || !productList || !searchInput) return;
+
+    if (!categoryList || !productList || !searchInput || !sortSelect) return;
+
+    const parsePrice = (price) => {
+        console.log(Number(price.replace(/\./g, "")));
+        if (typeof price === "number") return price;
+        return Number(price.replace(/\./g, "")) || 0;
+    };
+
+    const renderProducts = (products) => {
+        productList.innerHTML = products.length
+            ? products
+                  .map((product) => {
+                      return `
+                <div class="product-card">
+                    <div class="card" data-id="${product.id}">
+                        <div class="imgBox">
+                            <img src="${product.image}" alt="${
+                          product.name
+                      }" class="mouse product-image">
+                        </div>
+                        <div class="contentBox">
+                            <h3>${product.name}</h3>
+                            <h2 class="price">${parsePrice(
+                                product.price
+                            ).toLocaleString()}<small>đ</small></h2>
+                            <a href="#" class="buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>`;
+                  })
+                  .join("")
+            : `<p class="no-product-message">Không tìm thấy sản phẩm phù hợp</p>`;
+
+        // Thêm sự kiện click để điều hướng đến chi tiết sản phẩm
+        document.querySelectorAll(".card").forEach((card) => {
+            card.addEventListener("click", (e) => {
+                const productId = card.dataset.id;
+                window.location.href = `/detail/${productId}`;
+            });
+        });
+    };
+
+    const sortProducts = (products, sortType) => {
+        return products.sort((a, b) => {
+            const priceA = parsePrice(a.price);
+            const priceB = parsePrice(b.price);
+            return sortType === "asc" ? priceA - priceB : priceB - priceA;
+        });
+    };
 
     const filterProductsByCategory = async (categoryElement) => {
         document.querySelectorAll(".category-item").forEach((item) => {
@@ -128,59 +93,82 @@ const afterProductList = () => {
         });
 
         categoryElement.classList.add("active");
-        const categoryId = +categoryElement.dataset.id;
-        const products = await getAll();
+        activeCategory.id = +categoryElement.dataset.id; // Lưu danh mục đang chọn
 
-        const filteredProducts = products.filter((product) => {
-            return +product.categoryId === +categoryId;
-        });
+        let products = await getAll();
+        products = products.filter(
+            (product) => +product.categoryId === activeCategory.id
+        );
+        products = sortProducts(products, sortSelect.value);
 
-        if (filteredProducts.length === 0) {
-            productList.innerHTML = `<p class="no-product-message">Sản phẩm chưa có hoặc lỗi chính tả.</p>`;
+        categoryTitle.textContent = categoryElement.textContent;
+        renderProducts(products);
+    };
+
+    const loadProducts = async () => {
+        let products = await getAll();
+        if (!Array.isArray(products)) {
+            console.error("Lỗi: Dữ liệu sản phẩm không hợp lệ", products);
             return;
         }
 
-        categoryTitle.textContent = categoryElement.textContent;
-        productList.innerHTML = filteredProducts
-            .map(
-                (product) => `
-                <div class="product-card">
-                    <div class="card">
-                        <div class="imgBox">
-                            <img src="${product.image}" alt="${
-                    product.name
-                }" class="mouse product-image">
-                        </div>
-                        <div class="contentBox">
-                            <h3>${product.name}</h3>
-                            <h2 class="price">${product.price.toLocaleString()}<small>đ</small></h2>
-                            <a href="#" class="buy">Buy Now</a>
-                        </div>
-                    </div>
-                </div>`
-            )
-            .join("");
+        products = sortProducts(products, sortSelect.value);
+        renderProducts(products);
     };
+
+    await loadProducts();
 
     categoryList.addEventListener("click", async (e) => {
         if (e.target.classList.contains("category-item")) {
+            searchInput.value = "";
             filterProductsByCategory(e.target);
         }
     });
 
-    searchInput.addEventListener("input", () => {
+    const searchProducts = async () => {
         const searchValue = searchInput.value.trim().toLowerCase();
+        let products = await getAll();
 
-        const matchedCategory = Array.from(
-            document.querySelectorAll(".category-item")
-        ).find((category) =>
-            category.textContent.trim().toLowerCase().includes(searchValue)
-        );
-
-        if (matchedCategory) {
-            filterProductsByCategory(matchedCategory);
+        if (activeCategory.id !== null) {
+            products = products.filter(
+                (product) => +product.categoryId === activeCategory.id
+            );
         }
+
+        if (searchValue) {
+            const searchTerms = searchValue.split(" ").filter(Boolean);
+            products = products.filter((product) => {
+                const productName = product.name.toLowerCase();
+                return searchTerms.some((term) => productName.includes(term));
+            });
+        }
+
+        products = sortProducts(products, sortSelect.value);
+        renderProducts(products);
+    };
+
+    searchInput.addEventListener("input", debounce(searchProducts, 500));
+    sortSelect.addEventListener("change", async () => {
+        let products = await getAll();
+
+        // Nếu có danh mục đang chọn, chỉ lấy sản phẩm trong danh mục đó
+        if (activeCategory.id !== null) {
+            products = products.filter(
+                (product) => +product.categoryId === activeCategory.id
+            );
+        }
+
+        products = sortProducts(products, sortSelect.value);
+        renderProducts(products);
     });
+};
+
+const debounce = (callback, delay) => {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => callback(...args), delay);
+    };
 };
 
 export default afterProductList;
